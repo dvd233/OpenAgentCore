@@ -1,0 +1,583 @@
+[
+  [
+    "access.spec.ts",
+    14,
+    1,
+    "signs in with the Core key, keeps it out of the browser, and signs out and back in",
+    ""
+  ],
+  [
+    "access.spec.ts",
+    47,
+    1,
+    "opens a fresh install on the Overview's Getting started: a project and its key shown once, then the step is done",
+    ""
+  ],
+  [
+    "access.spec.ts",
+    108,
+    1,
+    "leads from Getting started to the default model configuration, and counts it done once the default harness has one",
+    ""
+  ],
+  [
+    "access.spec.ts",
+    130,
+    1,
+    "shows every page empty on a fresh install, and Getting started hides, comes back and leads to sandbox setup",
+    ""
+  ],
+  [
+    "access.spec.ts",
+    161,
+    1,
+    "opens Add node from Getting started when no node has joined",
+    ""
+  ],
+  [
+    "access.spec.ts",
+    170,
+    1,
+    "reopens a finished Getting started from the sidebar and keeps You're set through the tour",
+    ""
+  ],
+  [
+    "diagnostics.spec.ts",
+    7,
+    1,
+    "reads classified failures and separate Item receipts without execution writes",
+    ""
+  ],
+  [
+    "diagnostics.spec.ts",
+    37,
+    1,
+    "shows diagnostics failure honestly and can retry in Chinese",
+    ""
+  ],
+  [
+    "diagnostics.spec.ts",
+    61,
+    1,
+    "connection reads govern host completion and bound-key guidance",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    10,
+    1,
+    "shows the deployment's health on Overview and each monitor page",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    30,
+    1,
+    "opens a Session's conversation from the Session log, read-only",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    38,
+    1,
+    "keeps a failed Session's reason in sight in the Session log and on its page",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    54,
+    1,
+    "opens an Agent's Sessions from its failed Turns on Agent metrics",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    74,
+    1,
+    "shows a self-hosted Session's install command, issues its credential once, and revokes and restores it",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    145,
+    1,
+    "displays Core's installation command for a loopback Core",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    158,
+    1,
+    "displays Core's installation command without console installer assets",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    172,
+    1,
+    "issues a new executor credential after the unanswered one was rotated from its row",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    207,
+    1,
+    "opens a node and a sandbox in dialogs from Sandbox metrics",
+    ""
+  ],
+  [
+    "monitoring.spec.ts",
+    224,
+    1,
+    "shows E2B's cloud instead of machines",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    7,
+    1,
+    "adds a node: host requirements, a root/sudo command, a countdown, the same command after closing, a new one after expiry, then its own node's registration",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    109,
+    1,
+    "issues no command before the installation is read, for a loopback public URL or without node files, and sees a fix on reopening",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    149,
+    1,
+    "removes a node after confirmation",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    168,
+    1,
+    "marks a node on an old Core address in its row, beside each node's limit",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    178,
+    1,
+    "gives the host's uninstall command even when the installation must be read again",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    190,
+    1,
+    "sets up own-machine sandboxes page by page, with the Runtime from the distribution",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    215,
+    1,
+    "preselects microsandbox and asks once before switching to Docker",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    243,
+    1,
+    "saves E2B without opening Add node, as it has no machines",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    272,
+    1,
+    "uses the official E2B preset and clears a selected build when the key changes",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    293,
+    1,
+    "shows the retained E2B build while a replacement key is checked",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    304,
+    1,
+    "edits only the saved backend, preserving a custom size and Runtime",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    330,
+    1,
+    "keeps the page usable when Core refuses a sandbox change, and shows a safe refusal",
+    ""
+  ],
+  [
+    "nodes.spec.ts",
+    356,
+    1,
+    "renames a node and sets how many sandboxes run on it at once",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    11,
+    1,
+    "project failure shows unavailable sections and missing Session counts, then retry recovers",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    30,
+    1,
+    "failed Session reads keep Core summary figures but never synthesize an empty activity chart",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    44,
+    1,
+    "partial and failed refreshes retain rows with a durable caveat and recover",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    68,
+    1,
+    "successful empty reads preserve true zero counts and empty states",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    80,
+    1,
+    "local-only address links to System on other pages and blocks Add node",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    97,
+    3,
+    "captures localized unavailable and local-only states (en)",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    97,
+    3,
+    "captures localized unavailable and local-only states (zh-CN)",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    115,
+    1,
+    "Overview preserves partial activity and visibly qualifies a failed project refresh",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    139,
+    1,
+    "failed summary and Session refreshes preserve their previous evidence until retry succeeds",
+    ""
+  ],
+  [
+    "overview-readiness.spec.ts",
+    166,
+    1,
+    "installation failure cannot complete onboarding and its retry reveals local-only blockage",
+    ""
+  ],
+  [
+    "projects.spec.ts",
+    7,
+    1,
+    "creates a project, shows a new key once, revokes it and archives the project",
+    ""
+  ],
+  [
+    "projects.spec.ts",
+    40,
+    1,
+    "archives a project with active keys only once its name is typed",
+    ""
+  ],
+  [
+    "projects.spec.ts",
+    54,
+    1,
+    "reports an unconfirmed key issue and never replays it",
+    ""
+  ],
+  [
+    "provider-observations.spec.ts",
+    6,
+    1,
+    "default provider observations are optional details and recover only on Core success",
+    ""
+  ],
+  [
+    "public-url.spec.ts",
+    7,
+    1,
+    "sets up sandboxes with Core's address read-only, never sending it",
+    ""
+  ],
+  [
+    "public-url.spec.ts",
+    25,
+    1,
+    "explains an E2B rejection in the wizard, with a link to domain setup",
+    ""
+  ],
+  [
+    "public-url.spec.ts",
+    45,
+    1,
+    "lists the startup settings on System with where to change them",
+    ""
+  ],
+  [
+    "public-url.spec.ts",
+    59,
+    1,
+    "warns on Nodes about a node bound to an old Core address until it is removed",
+    ""
+  ],
+  [
+    "resources.spec.ts",
+    7,
+    1,
+    "keeps Core's reason when it refuses a deletion, then deletes on confirmation",
+    ""
+  ],
+  [
+    "resources.spec.ts",
+    20,
+    1,
+    "goes back to the page a resource was opened from",
+    ""
+  ],
+  [
+    "resources.spec.ts",
+    30,
+    1,
+    "reads an Agent saved with a model provider and no harness, without its key",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    50,
+    1,
+    "online configuration retains existing resources and stops rapid polling when preparation settles",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    108,
+    1,
+    "unknown target preparation preserves live old-generation service while an offline pin stays offline",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    143,
+    1,
+    "a generation-only change preserves mixed allocation ownership through failed inventory reads",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    178,
+    1,
+    "E2B omitted-key updates keep the saved key while explicit same-key replacements each advance generation",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    210,
+    1,
+    "a different E2B team leaves the committed configuration intact and requires a deliberate reset",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    236,
+    1,
+    "uncertain configuration refresh and inventory retry preserve a draft until its generation changes",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    286,
+    1,
+    "an observed installation change discards the old reset confirmation even at the same generation",
+    ""
+  ],
+  [
+    "sandbox-generation.spec.ts",
+    309,
+    1,
+    "closing an uncertain edit preserves the shared write block until a successful read",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    41,
+    1,
+    "auto reset requires a bounded deadline, then preserves Core progress past that deadline",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    85,
+    1,
+    "escalation and cancellation require explicit confirmation and never undo previous clearing",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    112,
+    1,
+    "force reset requires confirmation and reconfiguration uses the completed generation once",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    135,
+    1,
+    "an applied reset with a lost response stays blocked through failed reads and is never replayed",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    166,
+    1,
+    "a stale reset is refused until fresh state is reviewed, with no automatic resubmission",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    195,
+    1,
+    "reset progress survives failed node and deployment reads with visible qualifications in Chinese dark mode",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    220,
+    1,
+    "a pending reset survives navigation and a lost response cannot reopen stale write controls",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    278,
+    1,
+    "Nodes and configuration adopt reset and completion learned on Overview before cached node data expires",
+    ""
+  ],
+  [
+    "sandbox-reset.spec.ts",
+    316,
+    1,
+    "signing out clears pending reset ownership and a late response cannot overwrite the new login",
+    ""
+  ],
+  [
+    "sandbox-rollout-details.spec.ts",
+    8,
+    1,
+    "keeps rollout summary brief and opens all Core observations in details",
+    ""
+  ],
+  [
+    "sandbox-rollout-details.spec.ts",
+    34,
+    1,
+    "labels unknown target readiness without declaring settled nodes ready",
+    ""
+  ],
+  [
+    "skip-link.spec.ts",
+    26,
+    1,
+    "skips to the current page with Enter without changing its route or history",
+    ""
+  ],
+  [
+    "skip-link.spec.ts",
+    51,
+    1,
+    "preserves detail parameters and Back/Forward history after repeated skip-link activation",
+    ""
+  ],
+  [
+    "skip-link.spec.ts",
+    85,
+    1,
+    "skips to the current main after the tour removes and remounts the console",
+    ""
+  ],
+  [
+    "system.spec.ts",
+    9,
+    1,
+    "sets, replaces and clears a harness's default model configuration, and keeps its key out of the browser",
+    ""
+  ],
+  [
+    "system.spec.ts",
+    132,
+    1,
+    "reports a Core without a credential key as a configuration error, without rereading",
+    ""
+  ],
+  [
+    "system.spec.ts",
+    151,
+    1,
+    "reports an unconfirmed save, reads the default model configurations again once and never repeats the write",
+    ""
+  ],
+  [
+    "system.spec.ts",
+    170,
+    1,
+    "requires an explicit supported protocol choice for an older default configuration",
+    ""
+  ],
+  [
+    "wording.spec.ts",
+    8,
+    3,
+    "explains that applications submit function results across the console (en)",
+    ""
+  ],
+  [
+    "wording.spec.ts",
+    8,
+    3,
+    "explains that applications submit function results across the console (zh-CN)",
+    ""
+  ],
+  [
+    "wording.spec.ts",
+    27,
+    1,
+    "keeps English Session filters and actions visible at 1280 pixels",
+    ""
+  ],
+  [
+    "wording.spec.ts",
+    43,
+    1,
+    "names the E2B backend consistently and explains its two count sources",
+    ""
+  ]
+]

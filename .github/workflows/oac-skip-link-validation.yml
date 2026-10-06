@@ -1,0 +1,84 @@
+name: OpenAgentCore skip-link validation
+
+on:
+  push:
+    branches: [validation/oac-skip-link-421]
+
+permissions:
+  contents: read
+
+env:
+  # Replace only after parent approval and verification of the published source.
+  FEATURE_SHA: dd75f8e5bde62750c81411624eebfd59da768dde
+  BASE_SHA: 9fa92df0afb170bd57da8314e2a4280aca1fd4ac
+  EXPECTED_FORK: dvd233/OpenAgentCore
+  AGENTS_REUSE_E2E_SERVERS: "0"
+
+jobs:
+  browser-evidence:
+    if: github.repository == 'dvd233/OpenAgentCore'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        phase: [baseline, candidate]
+    steps:
+      - name: Check out reviewed validation tools
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-06
+        with:
+          ref: ${{ github.sha }}
+          path: validation-runner
+          persist-credentials: false
+      - name: Establish evidence directory and validate immutable inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="$HOME/.oac/tests/oac-skip-link/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-${{ matrix.phase }}"
+          mkdir -p "$evidence"
+          echo "OAC_EVIDENCE=$evidence" >> "$GITHUB_ENV"
+          [[ "$GITHUB_REPOSITORY" == "$EXPECTED_FORK" ]]
+          [[ "$FEATURE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$FEATURE_SHA" != "$BASE_SHA" ]]
+          [[ "$(git -C validation-runner rev-parse HEAD)" == "$GITHUB_SHA" ]]
+          (cd validation-runner/validation/oac-skip-link && sha256sum -c SHA256SUMS)
+          printf 'workflow_sha=%s\nfeature_sha=%s\nbase_sha=%s\nphase=%s\n' "$GITHUB_SHA" "$FEATURE_SHA" "$BASE_SHA" '${{ matrix.phase }}' > "$evidence/identity.txt"
+      - name: Check out exact approved candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ env.FEATURE_SHA }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check out exact upstream baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: MiniMax-AI/OpenAgentCore
+          ref: 9fa92df0afb170bd57da8314e2a4280aca1fd4ac
+          path: baseline
+          persist-credentials: false
+      - name: Set up repository-standard Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified 2026-10-06
+        with:
+          node-version: "22"
+      - name: Install pinned package manager
+        run: npm install --global pnpm@10.30.3
+      - name: Run source-bound validation
+        shell: bash
+        run: bash validation-runner/validation/oac-skip-link/run-validation.sh '${{ matrix.phase }}'
+      - name: Recheck source and retain final state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${OAC_EVIDENCE:-}"
+          node validation-runner/validation/oac-skip-link/check-source.mjs "$GITHUB_WORKSPACE" > "$OAC_EVIDENCE/final-source-check.log" 2>&1
+      - name: Retain evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified 2026-10-06
+        with:
+          name: oac-skip-link-${{ matrix.phase }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.OAC_EVIDENCE }}
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
