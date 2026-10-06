@@ -12,7 +12,7 @@ assert.match(feature ?? "", /^[0-9a-f]{40}$/);
 const git = (cwd, ...args) => execFileSync("git", ["-C", cwd, ...args], { encoding: "utf8" }).trim();
 const hashes = {
   "apps/web/src/ConsoleApp.tsx": "40bee46da93014dba19ca68300c96c7820b69a508fe63237aa4f25786502efe0",
-  "apps/web/e2e/skip-link.spec.ts": "02230077007e8dcec35e98150416b85902bd94a940879da287686297f66f3c28",
+  "apps/web/e2e/skip-link.spec.ts": "456da5043dd643cd3402d5a60cf1ed029eb37540da92cc8f3549c724b91aac1c",
 };
 assert.equal(git(baseline, "rev-parse", "HEAD"), base);
 assert.equal(git(candidate, "rev-parse", "HEAD"), feature);

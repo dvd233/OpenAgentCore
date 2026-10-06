@@ -9,7 +9,7 @@ permissions:
 
 env:
   # Replace only after parent approval and verification of the published source.
-  FEATURE_SHA: dd75f8e5bde62750c81411624eebfd59da768dde
+  FEATURE_SHA: b835fea5e6140dbab8529404f2fd23704ba96dd1
   BASE_SHA: 9fa92df0afb170bd57da8314e2a4280aca1fd4ac
   EXPECTED_FORK: dvd233/OpenAgentCore
   AGENTS_REUSE_E2E_SERVERS: "0"

@@ -16,7 +16,7 @@ index debc7e9..419f0b1 100644
              <div className="page-transition" key={`${location.view}:${location.params.project ?? ""}:${location.params.id ?? ""}`}>
 diff --git a/apps/web/e2e/skip-link.spec.ts b/apps/web/e2e/skip-link.spec.ts
 new file mode 100644
-index 0000000..7ebf285
+index 0000000..ef31970
 --- /dev/null
 +++ b/apps/web/e2e/skip-link.spec.ts
 @@ -0,0 +1,104 @@
@@ -33,7 +33,7 @@ index 0000000..7ebf285
 +}));
 +
 +async function tabBackToSkipLink(page: Page) {
-+  const skip = page.getByRole("link", { name: "Skip to content", exact: true });
++  const skip = page.getByRole("link", { name: "Skip to main content", exact: true });
 +  // Reach the link through the actual tab order, including after a route change
 +  // or the tour restores focus to its opener.
 +  for (let step = 0; step < 30; step++) {
@@ -49,7 +49,7 @@ index 0000000..7ebf285
 +  await openConsole(page, request, "files");
 +  const heading = page.getByRole("heading", { name: "Files", level: 1 });
 +  await expect(heading).toBeVisible();
-+  const skip = page.getByRole("link", { name: "Skip to content", exact: true });
++  const skip = page.getByRole("link", { name: "Skip to main content", exact: true });
 +  const main = page.getByRole("main");
 +  const existingMain = await main.elementHandle();
 +  const history = await historySnapshot(page);
@@ -112,7 +112,7 @@ index 0000000..7ebf285
 +  await opener.click();
 +  await expect(page.getByRole("heading", { name: "Is it healthy, and where does it fail?", exact: true })).toBeVisible();
 +  await expect.poll(() => originalMain!.evaluate((element) => element.isConnected)).toBe(false);
-+  await expect(page.getByRole("link", { name: "Skip to content", exact: true })).toHaveCount(0);
++  await expect(page.getByRole("link", { name: "Skip to main content", exact: true })).toHaveCount(0);
 +  await page.getByRole("button", { name: "Skip", exact: true }).click();
 +  await expect(opener).toBeFocused();
 +

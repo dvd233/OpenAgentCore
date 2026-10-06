@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { stripVTControlCharacters } from "node:util";
 
 // This gate is bound to the reviewed regression, not arbitrary similarly named tests.
-export const approvedSpecSha256 = "02230077007e8dcec35e98150416b85902bd94a940879da287686297f66f3c28";
+export const approvedSpecSha256 = "456da5043dd643cd3402d5a60cf1ed029eb37540da92cc8f3549c724b91aac1c";
 export const expectedCases = [
   { title: "skips to the current page with Enter without changing its route or history", line: 26, failureLine: 41, path: "/#files" },
   { title: "preserves detail parameters and Back/Forward history after repeated skip-link activation", line: 51, failureLine: 68, path: "/#agents?project=proj_7f3a91c2&id=agent_11c4f2a8" },
